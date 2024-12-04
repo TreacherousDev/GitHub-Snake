@@ -1,10 +1,18 @@
 browser.browserAction.onClicked.addListener((tab) => {
-  if (tab.url.includes("github.com")) {
-    
+  const githubProfileRegex = /^https:\/\/github\.com\/[^\/]+\/?$/; // Matches GitHub profile URLs
+
+  if (githubProfileRegex.test(tab.url)) {
+    // Inject the Snake game script
     browser.tabs.executeScript({
       file: "snake.js"
     });
   } else {
-    alert("This extension only works on GitHub!");
+    // Notify the user via a browser notification
+    browser.notifications.create({
+      type: "basic",
+      iconUrl: "icon.png",
+      title: "GitHub Snake Game",
+      message: "Please open a GitHub profile page to play Snake."
+    });
   }
 });

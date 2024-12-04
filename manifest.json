@@ -1,17 +1,17 @@
 {
   "manifest_version": 2,
   "name": "GitHub Snake Game",
-  "version": "0.1",
+  "version": "0.2",
   "description": "Play Snake on your GitHub contribution graph.",
   "permissions": [
     "activeTab",
-    "*://github.com/*"
+    "notifications"
   ],
   "background": {
     "scripts": ["extension-activate.js"]
   },
   "browser_action": {
-    "default_title": "Play",
+    "default_title": "Play (Keys: T, F, G, H)",
     "default_icon": {
       "16": "icon.png",
       "48": "icon.png",
