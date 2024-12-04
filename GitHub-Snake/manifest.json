@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "GitHub Snake Game",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Play Snake on your GitHub contribution graph.",
   "permissions": [
     "activeTab",

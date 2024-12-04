@@ -74,7 +74,7 @@ const endGame = () => {
   });
 };
 
-// Function to move the snake
+// Update the moveSnake function to handle power food consumption
 const moveSnake = () => {
   if (gameOver) return; // Stop movement if the game is over
 
@@ -100,6 +100,9 @@ const moveSnake = () => {
   if (food && newHead.x === food.x && newHead.y === food.y) {
     snake.unshift(newHead); // Grow the snake by adding the new head
     spawnFood(); // Spawn new food
+  } else if (powerFood && newHead.x === powerFood.x && newHead.y === powerFood.y) {
+    snake.unshift(newHead); // Grow the snake by adding the new head
+    consumePowerFood(); // Handle power food effects
   } else {
     // Move the snake by removing the tail and adding the new head
     const tail = snake.pop();
@@ -142,6 +145,82 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+
+let powerFood = null; // Current power food position
+let powerFoodTimeout = null; // Timeout for removing power food
+let powerFoodBlinkInterval = null; // Interval for blinking effect
+
+// Function to spawn power food at a random position
+const spawnPowerFood = () => {
+  let x, y;
+  let attempts = 0;
+  const maxAttempts = 1000; // Safety limit to avoid infinite loop
+  do {
+    x = Math.floor(Math.random() * 52); // Random width
+    y = Math.floor(Math.random() * 7);  // Random height
+    attempts++;
+    if (attempts > maxAttempts) {
+      console.error("Failed to spawn power food after multiple attempts.");
+      return; // Abort if we can't find an empty cell
+    }
+  } while (
+    snake.some(segment => segment.x === x && segment.y === y) || 
+    (food && food.x === x && food.y === y)
+  ); // Avoid placing food on the snake or normal food
+
+  powerFood = { x, y };
+  const powerFoodTile = contributionArray[y][x];
+  if (powerFoodTile) {
+    let blinkState = true; // Initial blink state
+    powerFoodBlinkInterval = setInterval(() => {
+      if (!powerFood) {
+        clearInterval(powerFoodBlinkInterval);
+        return;
+      }
+      powerFoodTile.setAttribute('data-level', blinkState ? '4' : '0'); // Toggle blink
+      blinkState = !blinkState;
+    }, 100); // Toggle every 200ms
+
+    // Set timeout to clear the power food after 10 seconds
+    powerFoodTimeout = setTimeout(() => {
+      clearPowerFood();
+    }, 6000);
+  }
+};
+
+// Function to clear power food
+const clearPowerFood = () => {
+  if (!powerFood) return;
+  const powerFoodTile = contributionArray[powerFood.y][powerFood.x];
+  if (powerFoodTile) {
+    powerFoodTile.setAttribute('data-level', '0'); // Clear the tile
+  }
+  powerFood = null;
+  clearInterval(powerFoodBlinkInterval);
+  clearTimeout(powerFoodTimeout);
+};
+
+// Function to handle power food consumption
+const consumePowerFood = () => {
+  clearPowerFood();
+  let growthCount = 5; // Number of units to grow
+  const growSnake = () => {
+    if (growthCount > 0) {
+      const tail = snake[snake.length - 1];
+      snake.push({ x: tail.x, y: tail.y }); // Add a new segment at the tail's position
+      growthCount--;
+    } else {
+      clearInterval(growthInterval); // Stop growing after 5 segments
+    }
+  };
+  const growInterval = setInterval(growSnake, 400); // Grow every 400ms
+};
+
+
+
+
 // Spawn the initial food and start the game loop
 spawnFood();
 setInterval(moveSnake, 200); // Move the snake every 200 milliseconds
+// Spawn a power food every 20 seconds
+setInterval(spawnPowerFood, 20000);
