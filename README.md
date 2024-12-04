@@ -1,5 +1,6 @@
 # GitHub-Snake
- A Web Browser Extension that lets you play Snake on Github Activity
+ A Firefox Extension that lets you play Snake on Github Activity  
+ Get this now from the [extension marketplace](https://addons.mozilla.org/en-US/firefox/addon/github-snake-game/)
 
 ## Building from Source
 1. Clone the repo or download as zip and unpack.
