@@ -1,5 +1,5 @@
 # GitHub-Snake
-![12051-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/9b7b12f0-3aaa-4f8c-bde2-f935c91cfeaf)
+![12051-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/9b7b12f0-3aaa-4f8c-bde2-f935c91cfeaf)  
 A Browser Extension that lets you play Snake on your GitHub Activity    
 Get this now for Firefox from the [Mozilla Extension Marketplace](https://addons.mozilla.org/en-US/firefox/addon/github-snake-game/)
 
