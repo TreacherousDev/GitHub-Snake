@@ -14,13 +14,13 @@ Get this now for Firefox from the [Mozilla Extension Marketplace](https://addons
 
 
 ### For Chromium
-Chrome requires that I pay them 5$ to publish my addon. Hell no.  
+Chrome requires that I pay them 5$ to publish my add-on. Hell no.  
 With that said, here is how to build it yourself:
 1. Clone the repo or download as zip and unpack.
 2. Open `Extensions` tab
 3. Enable `Developer Mode`
 4. Click on `Load Unpacked`
-5. Select the folder at `GitHub-Snake/GitHub-Snake-Chromium`
+5. Select the folder `GitHub-Snake/GitHub-Snake-Chromium`
 6. Open a GitHub profile tab and activate the extension
 
 
