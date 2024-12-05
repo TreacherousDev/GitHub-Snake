@@ -4,7 +4,7 @@ A Browser Extension that lets you play Snake on your GitHub Activity
 Get this now for Firefox from the [Mozilla Extension Marketplace](https://addons.mozilla.org/en-US/firefox/addon/github-snake-game/)
 
 ## How to Play
-The rules of the game are pretty much identical to old-school Snake. Navigate aross the board using (T, F, G, H) as directional keys, eat food to grow larger, and avoid hitting walls or your own body. Every once in a while, a high value food will spawn for a limited amount of time that boosts your growth by 5 units once eaten. 
+The rules of the game are pretty much identical to old-school Snake. Navigate across the board using (T, F, G, H) as directional keys, eat food to grow larger, and avoid hitting walls or your own body. Every once in a while, a high value food will spawn for a limited amount of time that boosts your growth by 5 units once eaten. 
 
 To start a new game, simply refresh the browser page and rerun the extension.
 
