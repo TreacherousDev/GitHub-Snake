@@ -14,7 +14,7 @@ Get this now for Firefox from the [Mozilla Extension Marketplace](https://addons
 
 
 ### For Chromium
-Chrome requires that I pay them 5$ to publish my add-on. Hell no.  
+Chrome Web Store demands that I pay them 5$ to publish my add-on. Hell no.  
 With that said, here is how to build it yourself:
 1. Clone the repo or download as zip and unpack.
 2. Open `Extensions` tab
