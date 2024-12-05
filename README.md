@@ -17,7 +17,7 @@ Get this now for Firefox from the [Mozilla Extension Marketplace](https://addons
 Chrome Web Store demands that I pay them 5$ to publish my add-on. Hell no.  
 With that said, here is how to build it yourself:
 1. Clone the repo or download as zip and unpack.
-2. Open `Extensions` tab
+2. Open your Chromium web browser and click on `Extensions` tab
 3. Enable `Developer Mode`
 4. Click on `Load Unpacked`
 5. Select the folder `GitHub-Snake/GitHub-Snake-Chromium`
