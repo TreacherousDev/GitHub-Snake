@@ -1,6 +1,6 @@
 # GitHub-Snake
 ![12051-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/9b7b12f0-3aaa-4f8c-bde2-f935c91cfeaf)  
-A Browser Extension that lets you play Snake on your GitHub Activity    
+GitHub Snake is a Browser Extension that lets you play Snake on your GitHub Activity    
 Get this now for Firefox from the [Mozilla Extension Marketplace](https://addons.mozilla.org/en-US/firefox/addon/github-snake-game/)
 
 ## How to Play
@@ -8,7 +8,7 @@ The rules of the game are pretty much identical to old-school Snake. Navigate ac
 
 To start a new game, simply refresh the browser page and rerun the extension.
 
-
+___
 ## Building from Source
 ### For Firefox
 1. Clone the repo or download as zip and unpack.
@@ -28,4 +28,11 @@ With that said, here is how to build it yourself:
 5. Select the folder `GitHub-Snake/GitHub-Snake-Chromium`
 6. Open a GitHub profile tab and activate the extension
 
+___
+## Contributing
 
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
