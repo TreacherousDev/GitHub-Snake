@@ -196,6 +196,7 @@ const consumePowerFood = () => {
 
 // Add an event listener for the keydown to update the direction
 document.addEventListener('keydown', (event) => {
+  event.preventDefault(); // Removes the default keyboard actions from the page.
   if (!canChangeDirection) return; // Ignore input if a change has already occurred in this loop
 
   const key = event.key.toLowerCase();
@@ -221,6 +222,6 @@ document.addEventListener('keydown', (event) => {
 
 // Spawn the initial food and start the game loop
 spawnFood();
-setInterval(moveSnake, 200); // Move the snake every 200 milliseconds
+setInterval(moveSnake, 150); // Move the snake every 200 milliseconds
 // Spawn a power food every 20 seconds
 setInterval(spawnPowerFood, 20000);
