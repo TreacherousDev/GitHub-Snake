@@ -122,29 +122,6 @@ const moveSnake = () => {
   });
 };
 
-// Add an event listener for the keydown to update the direction
-document.addEventListener('keydown', (event) => {
-  if (!canChangeDirection) return; // Ignore input if a change has already occurred in this loop
-
-  const key = event.key.toLowerCase();
-  if (key === 't' && direction !== 'down') {
-    direction = 'up';
-    canChangeDirection = false;
-  }
-  if (key === 'g' && direction !== 'up') {
-    direction = 'down';
-    canChangeDirection = false;
-  }
-  if (key === 'f' && direction !== 'right') {
-    direction = 'left';
-    canChangeDirection = false;
-  }
-  if (key === 'h' && direction !== 'left') {
-    direction = 'right';
-    canChangeDirection = false;
-  }
-});
-
 
 let powerFood = null; // Current power food position
 let powerFoodTimeout = null; // Timeout for removing power food
@@ -216,6 +193,29 @@ const consumePowerFood = () => {
   const growInterval = setInterval(growSnake, 400); // Grow every 400ms
 };
 
+
+// Add an event listener for the keydown to update the direction
+document.addEventListener('keydown', (event) => {
+  if (!canChangeDirection) return; // Ignore input if a change has already occurred in this loop
+
+  const key = event.key.toLowerCase();
+  if (key === 'w' && direction !== 'down') {
+    direction = 'up';
+    canChangeDirection = false;
+  }
+  if (key === 's' && direction !== 'up') {
+    direction = 'down';
+    canChangeDirection = false;
+  }
+  if (key === 'a' && direction !== 'right') {
+    direction = 'left';
+    canChangeDirection = false;
+  }
+  if (key === 'd' && direction !== 'left') {
+    direction = 'right';
+    canChangeDirection = false;
+  }
+}, true);
 
 
 
